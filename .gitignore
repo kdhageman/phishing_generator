@@ -1,4 +1,4 @@
-data/
+data/*.dat
 latex/main.pdf
 
 # Byte-compiled / optimized / DLL files
