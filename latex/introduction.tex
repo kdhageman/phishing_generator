@@ -1,19 +1,18 @@
 \section{Introduction}
-This report describes the development of a recurrent neural network for the generation of phishing domain names.
+Phishing attacks pose a major threat to everyday Internet users, in which victims are persuaded to disclose personal or sensitive information through digital means.
+Possibly the most well-known variant is the fake email sent from someone, who claims to be working at a bank or another trustworthy party, asking to visit a website to enter some information.
+These phishing emails attempt to persuade their victims to visit a website that looks and feels similar to the one of the targeted brand, but is actually under control of the attacker.
+
+Phishers (i.e. the attackers) put effort into improving the perceived trustworthiness of their communication channels, such as copying email structures, logo's and website layouts.
+One of these techniques is to host their fake websites on domains that resemble legitimate ones.
+For instance, instead of persuading a victim into visiting the legitimate {\tt paypal.com}, a phisher may redirect the user to {\tt paypal-secure.com} or {\tt paypai.com} instead.
+These domains being registered solely for executing phishing attacks are referred to as {\it phishing domains}.
+
+There is a benefit for the general Internet community to identify these domains and to take countermeasures as soon as possible.
+In this project, a recurrent neural network is implemented, with the goal of being to generate phishing domains.
+The project is a attempt to demonstrate of how a recurrent neural network can capture the specific characteristics of domains in general and phishing domains specifically. 
 
 \subsection{Covered course material}
-The primary course material that inspired the project was the introduction to PyTorch by Adam Paszke.
-Experience with tools in other machine learning course was primarily with {\tt MATLAB} and {\tt scikit-learn}, motivating me to use PyTorch for this project.
-
-The demonstration of a recurrent neural network for the generation of sentences based 
-
-\subsection{Phishing domain names}
-In phishing attacks, an attacker - or phisher - attempts to obtain sensitive information from its victim through digital means.
-A common phishing attacks begins with an attacker contacting its victim (e.g. via an email) urging them to visit a particular website (e.g. a spoofed version of a banking website), 
-The spoofed website is constructed to persuade the victim in providing sensitive information.
-
-For a phishing attack to succeed, the impersonation of a trusted party should be sufficiently convincing for the victim to believe they are interacting with the actual impersonated party.
-Therefore, phishers employ a range of techniques to increase their perceived trustworthiness.
-
-The aforementioned spoofed website is hosted on a particular domain name (e.g. {\tt www.example.org}.
-A common technique used by phishers is to host phishing websites on domain names that are similar 
+The primary course material that inspired this project was the introduction to PyTorch by Adam Paszke.
+My previous experience with machine learning tools was primarily in {\tt MATLAB} and {\tt scikit-learn}, motivating me to use PyTorch for this project.
+The developed neural network in this project is influenced by both the RNN demonstration in the course, as well as one of the PyTorch tutorials\footnote{\url{https://pytorch.org/tutorials/intermediate/char_rnn_generation_tutorial.html}}.

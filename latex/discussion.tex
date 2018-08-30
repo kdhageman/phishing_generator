@@ -1,1 +1,35 @@
 \section{Discussion}
+
+\subsection{Training}
+The impact of learning rate ended up having little effect, because the model seems to converge rather quickly, even with a small learning rate.
+Similarly, the size of the hidden layer had little impact on the training loss.
+
+\subsection{Domain generation}
+By observing a set of generated domains, there are several interesting observations.
+
+\paragraph{Number as starting character}
+Whenever a number is used as the starting number, the generated domain tends to be either (1) very short (e.g. {\tt 5.com} or (2) follow an IP address-like structure (e.g. {\tt 9.19.152.283-328-538-252-558-420-179.49.278.283}).
+In the previous example, an IP address ({\tt 9.19.152.283}) seems to get mixed with strings of dash ("-") delimited integers ({\tt 328-538-252-558}).
+An interesting observation is that the IP address-like domains contain invalid IP addresses (a single integer within the IP address cannot exceed 255).
+Generally speaking, it seems that the model has learned itself to not mix integers with characters.
+
+\paragraph{Domain name structure}
+A domain name is composed of several {\it labels}, which represents a hierarchical structure within the domain name.
+The labels are delimited by a dot ({\tt .}), where the labels (when read right to left) become more detailed. 
+For instance, the right-most label {\tt dk} in {\tt www.example.dk} describes that the domain resides within the Danish domain space, whereas the left label {\tt www} denotes the very specific notion of the domain hosting a web server.
+The right-most label in a domain name is referred to as the top-level domain.
+
+The vast majority of the generated domains follows a common domain name structure of having either two or three labels (excluding the aforementioned IP address-like domains).
+Interestingly, almost all of these domains have the {\tt .com} (or very close related) top-level domain.
+Out of all domains in the training set that have a traditional domain name structure (i.e. ending with valid top level domain), just 56.7\% have the {\tt .com} top level domain. 
+Additionally, the {\tt com} label seems to appear in generated domains names not only at the end of a domain name, but also in other places.
+For instance, consider the domain {\tt lonterestine.com.account-infore.com.com}, which contains the string {\tt .com} three times.
+Concluding, in the generated set of domains, the {\tt .com} top-level domain seems to be overrepresented.
+
+\paragraph{The PayPal syndrome}
+As an online payment service, PayPal is one of the most targeted brands when it comes to phishing attacks.
+We can see this representation, since many generated domains (in particular those that start with {\tt p}) contain the string {\tt paypal}.
+
+\subsection{Conclusion}
+The project proved to be an interesting introduction to recurrent neural networks and gave some interesting insights in the patterns that a recurrent neural network learns.
+There are many improvements to be made, most notably the introduction of more 
